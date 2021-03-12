@@ -5,7 +5,7 @@ use std::env;
 use std::path::PathBuf;
 
 fn main() {
-    println!("cargo:rerun-if-changed=wrapper.h");
+    println!("cargo:rerun-if-changed=src/c/snes_spc/spc.h");
     cc::Build::new()
         .include("src/c/")
         .flag("-fPIC")

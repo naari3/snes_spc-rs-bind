@@ -9,6 +9,10 @@ build = "build.rs"
 
 [dependencies]
 
+[dev-dependencies]
+id666-rs = { git = "https://github.com/naari3/id666-rs-bind", rev = "49778b1" }
+hound = "3.4"
+
 [build-dependencies]
 bindgen = "0.57.0"
 cc = { version = "1.0.66", features = ["parallel"] }
