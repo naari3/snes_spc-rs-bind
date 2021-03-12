@@ -1,0 +1,14 @@
+[package]
+name = "snes_spc"
+version = "0.1.0"
+authors = ["naari3 <naari.named@gmail.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+snes_spc-sys = { path = "../snes_spc-sys" }
+
+[dev-dependencies]
+id666-rs = { git = "https://github.com/naari3/id666-rs-bind", rev = "49778b1" }
+hound = "3.4"
