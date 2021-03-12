@@ -70,11 +70,12 @@ impl SNESSpc {
     }
 
     pub fn load_spc(&self, data: &mut [u8]) -> Result<(), SNESSpcError> {
+        // let data_len =
         let err = unsafe {
             spc_load_spc(
                 self.inner_spc,
                 data.as_mut_ptr() as *mut c_void,
-                data.len() as i64,
+                data.len() as ::std::os::raw::c_long,
             )
         };
         if err as i8 == 0 {

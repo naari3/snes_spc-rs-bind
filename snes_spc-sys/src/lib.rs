@@ -21,7 +21,11 @@ mod tests {
             let filter = spc_filter_new();
             let id6 = ID666::from(&mut data).unwrap();
 
-            spc_load_spc(spc, data.as_mut_ptr() as *mut c_void, data.len() as i64);
+            spc_load_spc(
+                spc,
+                data.as_mut_ptr() as *mut c_void,
+                data.len() as ::std::os::raw::c_long,
+            );
 
             spc_clear_echo(spc);
             spc_filter_clear(filter);
