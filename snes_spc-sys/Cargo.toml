@@ -3,7 +3,12 @@ name = "snes_spc-sys"
 version = "0.1.0"
 authors = ["naari3 <naari.named@gmail.com>"]
 edition = "2018"
+build = "build.rs"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+
+[build-dependencies]
+bindgen = "0.57.0"
+cc = { version = "1.0.66", features = ["parallel"] }
