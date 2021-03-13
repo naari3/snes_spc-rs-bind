@@ -1,3 +1,3 @@
 [submodule "snes_spc-sys/src/c"]
 	path = snes_spc-sys/src/c
-	url = https://github.com/naari3/snes_spc.git
+	url = https://github.com/jprjr/snes_spc.git
