@@ -1,4 +1,8 @@
-use std::ffi::{c_void, CStr};
+use std::{
+    error::Error,
+    ffi::{c_void, CStr},
+    fmt::Display,
+};
 
 use snes_spc_sys::*;
 
@@ -12,6 +16,22 @@ pub enum SNESSpcError {
     NotSpcFile,
     CorruptSpcFile,
     SPCEmulationError,
+}
+
+impl Error for SNESSpcError {
+    fn description<'a>(&'a self) -> &'a str {
+        match *self {
+            SNESSpcError::NotSpcFile => "Not spc file",
+            SNESSpcError::CorruptSpcFile => "Corrupt spc file",
+            SNESSpcError::SPCEmulationError => "SPC Emulation Error",
+        }
+    }
+}
+
+impl Display for SNESSpcError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "{:?}", self)
+    }
 }
 
 impl SNESSpc {
